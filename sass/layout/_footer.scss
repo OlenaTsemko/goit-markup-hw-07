@@ -1,0 +1,175 @@
+/* Логотип в подвале */
+.logo.inverse {
+  margin-bottom: 20px;
+  margin-right: 0;
+
+  color: #ffffff;
+
+  transform-origin: top left;
+}
+.logo.inverse:hover,
+.logo.inverse:focus {
+  color: $accent-color;
+}
+.logo.inverse:hover .logo-accent,
+.logo.inverse:focus .logo-accent {
+  color: #ffffff;
+}
+
+/* Подвал */
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.footer > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.footer-address-container,
+.footer-social-list-container {
+  flex-basis: 25%;
+}
+.footer-form-container {
+  flex-basis: 50%;
+}
+.footer .holder:not(:last-child) {
+  margin-right: 30px;
+}
+
+.footer {
+  background-color: $background-footer-color;
+}
+.footer-address-list-item:not(:last-child) {
+  margin-bottom: 9px;
+}
+.footer-address-list-item-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+
+  transform: scale(1);
+  transform-origin: top left;
+  transition: transform 250ms $transition-timing-function,
+    color 250ms $transition-timing-function;
+}
+
+.footer-address-list-item-link.location {
+  color: $secondary-text-color;
+}
+.footer-address-list-item-link:hover,
+.footer-address-list-item-link:focus {
+  color: $accent-color;
+
+  transform: scale(1.1);
+}
+
+.footer .social-list {
+  width: 206px;
+}
+.footer-social-list-container .text,
+.footer-form-container .text {
+  display: block;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $secondary-text-color;
+}
+
+.footer .social-list-item-link {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer .social-list-item-link:hover,
+.footer .social-list-item-link:focus {
+  background-color: $accent-color;
+}
+.footer .social-list-icon {
+  fill: #ffffff;
+}
+
+.footer-form {
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}
+
+.footer-form-input {
+  margin-right: 12px;
+  padding: 15px 16px;
+
+  width: 358px;
+  height: 50px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: inset 0 0 0 50px $background-footer-color;
+  outline: none;
+
+  caret-color: rgba(255, 255, 255, 0.6);
+
+  /* color: inherit; */
+  /* background-color: inherit; */
+
+  /* градиент в инпуте */
+  /* background-color: #b0b3ba;
+  box-shadow: inset 0 200px 200px -100px $background-footer-color; */
+}
+
+/* эксперементы с тенью =) */
+/* .footer-form-input:hover,
+.footer-form-input:focus {
+  box-shadow: 0 0 25px 0 $accent-color,
+    inset 0 200px 200px -100px $background-footer-color;
+
+  inset 0 0 0 50px $background-footer-color;
+} */
+
+.footer-form-input:valid {
+  border: 1px solid $accent-color;
+}
+
+.footer-form-input:invalid:not(:placeholder-shown) {
+  border: 1px solid #ff0000;
+}
+
+.footer-form-input::placeholder {
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer .modal-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 28px;
+
+  transform-origin: top left;
+}
+.subscribe {
+  margin-right: 10px;
+}
+/* пробный способ вставить иконку через псевдо */
+/* .subscribe::after {
+  content: '';
+  display: inline-block;
+  background-image: url(../images/icon-send.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  vertical-align: middle;
+} */
