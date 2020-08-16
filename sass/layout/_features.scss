@@ -2,24 +2,28 @@
 .features {
   padding-top: 94px;
 }
+
 .features-list {
   display: flex;
   justify-content: space-between;
 }
+
 .features-list-item {
   width: 270px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
-.features-list-item:not(:last-child) {
-  margin-right: 30px;
-}
+
 .icon-features {
   width: 70px;
   height: 70px;
-}
 
-.features-icon-box:hover .icon-features {
-  animation-name: rotateIn;
-  animation-duration: 1000ms;
+  .features-icon-box:hover & {
+    animation-name: rotateIn;
+    animation-duration: 1000ms;
+  }
 }
 
 @keyframes rotateIn {
@@ -42,20 +46,19 @@
   height: 120px;
   background-color: $background-secondary-color;
 }
+
 .features-subtitle {
   margin-bottom: 10px;
 
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
+  @include fontData(700, 14px, 1.14);
+
   text-transform: uppercase;
   color: $title-color;
 }
+
 .features-description {
   margin-top: 0;
   margin-bottom: 0;
 
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  @include fontData(400, 14px, 1.71);
 }

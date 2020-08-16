@@ -1,31 +1,32 @@
-/* Логотип (в шапке) */
+//  Логотип (в шапке)
 .logo {
   margin-right: 85px;
 
   font-family: $secondary-font;
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.19;
+
+  @include fontData(700, 26px, 1.19);
+
   color: #000000;
 
   transform: scale(1);
   transform-origin: bottom center;
   transition: transform 250ms $transition-timing-function,
     color 250ms $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+
+    transform: scale(1.1);
+  }
 }
 
 .logo-accent {
   color: $accent-color;
   transition: color 250ms $transition-timing-function;
-}
-.logo:hover,
-.logo:focus {
-  color: $accent-color;
 
-  transform: scale(1.1);
-}
-
-.logo:hover .logo-accent,
-.logo:focus .logo-accent {
-  color: #000000;
+  .logo:hover &,
+  .logo:focus & {
+    color: #000000;
+  }
 }

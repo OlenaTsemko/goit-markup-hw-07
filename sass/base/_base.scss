@@ -9,25 +9,24 @@ html {
 }
 
 body {
-  /* чтоб зафиксировать хедер */
-  /* padding-top: 80px; */
-
   background-color: $background-main-color;
   font-family: $main-font;
   letter-spacing: 0.03em;
   color: $primary-text-color;
 }
 
-/* Универсальные */
+//  Универсальные
 .link {
   display: block;
   text-decoration: none;
 }
+
 .list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 .address {
   font-style: normal;
 }

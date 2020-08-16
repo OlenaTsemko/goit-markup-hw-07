@@ -17,28 +17,31 @@
 
   transition: color 250ms $transition-timing-function,
     border 250ms $transition-timing-function;
-}
-.customers-list-item-link:hover,
-.customers-list-item-link:focus {
-  color: $accent-color;
-  border: 1px solid $accent-color;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    border: 1px solid $accent-color;
+  }
 }
 
 .customers-list-item:not(:last-child) {
   margin-right: 30px;
 }
+
 .icon-client-logo {
   fill: currentColor;
-}
-.icon-client-logo:hover,
-.icon-client-logo:focus {
-  fill: currentColor;
-}
 
-.customers-list-item-link:hover .icon-client-logo,
-.customers-list-item-link:focus .icon-client-logo {
-  animation: swing 1500ms;
-  transform-origin: top center;
+  &:hover,
+  &:focus {
+    fill: currentColor;
+  }
+
+  .customers-list-item-link:hover &,
+  .customers-list-item-link:focus & {
+    animation: swing 1500ms;
+    transform-origin: top center;
+  }
 }
 
 @keyframes swing {

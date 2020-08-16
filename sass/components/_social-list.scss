@@ -18,18 +18,21 @@
 
   transition: background-color 250ms $transition-timing-function,
     color 250ms $transition-timing-function;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: $accent-color;
+  }
 }
-.social-list-item-link:hover,
-.social-list-item-link:focus {
-  color: #ffffff;
-  background-color: $accent-color;
-}
+
 .social-list-icon {
   width: 20px;
   height: 20px;
   fill: currentColor;
-}
-.social-list-icon:hover,
-.social-list-icon:focus {
-  fill: currentColor;
+
+  &:hover,
+  &:focus {
+    fill: currentColor;
+  }
 }

@@ -9,12 +9,12 @@
 
   transition: opacity 500ms $transition-timing-function,
     visibility 500ms $transition-timing-function;
-}
 
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 .modal {
@@ -35,6 +35,10 @@
   border-radius: 4px;
 
   transition: transform 500ms $transition-timing-function;
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, 50%);
+  }
 }
 
 .modal-form {
@@ -44,17 +48,11 @@
   flex-direction: column; */
 }
 
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, 50%);
-}
-
 .modal-form-text {
   display: block;
   margin-bottom: 30px;
 
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
+  @include fontData(700, 20px, 1.15);
 }
 
 .modal-form-input,
@@ -75,6 +73,11 @@
   box-shadow: 0 0 0 1000px #ffffff inset;
 
   caret-color: $accent-color;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $accent-color;
+  }
 }
 
 .form-field {
@@ -89,9 +92,8 @@
   left: 42px;
   transform: translateY(-50%);
 
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.14;
+  @include fontData(400, 14px, 1.14);
+
   letter-spacing: 0.01em;
 
   color: $primary-text-color;
@@ -100,28 +102,6 @@
     color 250ms $transition-timing-function,
     font-size 250ms $transition-timing-function,
     line-height 250ms $transition-timing-function;
-}
-
-.modal-message-label {
-  top: 20px;
-  left: 16px;
-}
-
-.form-field-message {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.modal-form-message {
-  height: 120px;
-  padding-left: 16px;
-  resize: none;
-}
-
-.modal-form-input:focus,
-.modal-form-message:focus {
-  outline: none;
-  border: 1px solid $accent-color;
 }
 
 .modal-form-input:focus + .modal-form-label,
@@ -136,9 +116,25 @@
   color: $accent-color;
 }
 
-.modal-form-message:focus + .modal-message-label,
-.modal-form-message:not(:placeholder-shown) + .modal-message-label {
-  transform: translateY(-40px);
+.modal-message-label {
+  top: 20px;
+  left: 16px;
+
+  .modal-form-message:focus + &,
+  .modal-form-message:not(:placeholder-shown) + & {
+    transform: translateY(-40px);
+  }
+}
+
+.form-field-message {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.modal-form-message {
+  height: 120px;
+  padding-left: 16px;
+  resize: none;
 }
 
 .modal-form-icon {
@@ -153,11 +149,11 @@
   fill: currentColor;
 
   transition: fill 250ms $transition-timing-function;
-}
 
-.modal-form-input:focus ~ .modal-form-icon,
-.modal-form-input:not(:placeholder-shown) ~ .modal-form-icon {
-  fill: $accent-color;
+  .modal-form-input:focus ~ &,
+  .modal-form-input:not(:placeholder-shown) ~ & {
+    fill: $accent-color;
+  }
 }
 
 .modal-form-policy-label {
@@ -170,9 +166,7 @@
 }
 
 .modal-form-policy-desc {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.71;
+  @include fontData(400, 14px, 1.71);
 
   color: $primary-text-color;
 }
@@ -196,16 +190,16 @@
 
   transition: background-color 250ms $transition-timing-function,
     border 250ms $transition-timing-function;
-}
 
-.modal-form-policy-input:checked + .modal-form-policy-icon-span {
-  background-color: $accent-color;
-  border: 2px solid $accent-color;
+  .modal-form-policy-input:checked + & {
+    background-color: $accent-color;
+    border: 2px solid $accent-color;
 
-  /* 2-ой способ вставить кастомный чекбокс вместо инлайн свг(спрайт) */
-  /* background-image: url(../images/icon-check.svg);
+    /* 2-ой способ вставить кастомный чекбокс вместо инлайн свг(спрайт) */
+    /* background-image: url(../images/icon-check.svg);
   background-size: contain;
   background-origin: border-box; */
+  }
 }
 
 .modal-form-policy-icon {
@@ -232,22 +226,24 @@
   outline: none;
 }
 
-.button-close:hover .modal-form-icon-close,
-.button-close:focus .modal-form-icon-close {
-  fill: $accent-color;
-}
-
 .modal-form-icon-close {
   transition: fill 250ms $transition-timing-function;
+
+  .button-close:hover &,
+  .button-close:focus & {
+    fill: $accent-color;
+  }
 }
 
 .form-btn {
   padding: 10px 55px;
+
+  &:hover,
+  &:focus {
+    transform: scale(1);
+  }
 }
-.form-btn:hover,
-.form-btn:focus {
-  transform: scale(1);
-}
+
 /* 2-ой способ скрыть инпуты для кастомных чекбоксов (вместо вижуали хидден) */
 /* .modal-form-policy-input {
 -webkit-appearance: none;

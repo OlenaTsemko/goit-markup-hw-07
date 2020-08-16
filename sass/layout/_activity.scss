@@ -7,9 +7,10 @@
   position: relative;
 
   width: calc((100% - 60px) / 3);
-}
-.activity-list-item:not(:last-child) {
-  margin-right: 30px;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .activity-list-item-description {
@@ -24,9 +25,8 @@
   padding-top: 27px;
   padding-bottom: 27px;
 
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
+  @include fontData(700, 14px, 1.14);
+
   text-align: center;
   text-transform: uppercase;
   color: $secondary-text-color;
